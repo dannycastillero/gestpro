@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-width: 240px;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { @apply bg-gray-50 text-gray-900; }
+}
+
+@layer components {
+  /* Botones */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-brand-500 text-white rounded-lg
+           text-sm font-medium hover:bg-brand-600 active:bg-brand-700
+           transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 rounded-lg
+           text-sm font-medium border border-gray-200 hover:bg-gray-50
+           transition-colors duration-150 disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg
+           text-sm font-medium hover:bg-red-600 transition-colors duration-150;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-gray-600 rounded-lg
+           text-sm hover:bg-gray-100 transition-colors duration-150;
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           placeholder-gray-400 transition-shadow duration-150;
+  }
+  .input-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .select-field {
+    @apply input-field cursor-pointer;
+  }
+  .textarea-field {
+    @apply input-field resize-none;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+  }
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-100 flex items-center justify-between;
+  }
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  /* Tabs */
+  .tab-btn {
+    @apply px-4 py-2 text-sm font-medium text-gray-500 border-b-2 border-transparent
+           hover:text-gray-700 hover:border-gray-300 transition-colors duration-150;
+  }
+  .tab-btn-active {
+    @apply px-4 py-2 text-sm font-medium text-brand-600 border-b-2 border-brand-500;
+  }
+
+  /* Badge estados */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* Table */
+  .table-base {
+    @apply w-full text-sm;
+  }
+  .table-base th {
+    @apply px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider
+           bg-gray-50 border-b border-gray-200;
+  }
+  .table-base td {
+    @apply px-4 py-3 border-b border-gray-100;
+  }
+  .table-base tr:hover td {
+    @apply bg-gray-50;
+  }
+
+  /* Sidebar */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150;
+  }
+  .sidebar-link-active {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           bg-brand-50 text-brand-700;
+  }
+
+  /* Form grid */
+  .form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+  .form-grid-3 {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+  }
+
+  /* Empty state */
+  .empty-state {
+    @apply flex flex-col items-center justify-center py-16 text-center text-gray-500;
+  }
+
+  /* Scrollbar */
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: #e5e7eb transparent; }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 3px; }
+}
